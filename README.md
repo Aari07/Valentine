@@ -1,21 +1,16 @@
 <html lang="en">
 <head>
-<link
-  rel="preload"
-  as="image"
-  href="https://github.com/user-attachments/assets/1f43b9bd-9c9c-41e1-b346-30de233e5ff8"
-/>
+  <meta charset="UTF-8" />
+  <title>Valentine Proposal</title>
 
-  <link
-  rel="preload"
-  as="image"
-  href="https://raw.githubusercontent.com/user-attachments/assets/abe7e070-9637-4f86-bfde-50c4d6adb225"
-/>
+  <!-- Preload GIFs -->
+  <link rel="preload" as="image"
+        href="https://github.com/user-attachments/assets/1f43b9bd-9c9c-41e1-b346-30de233e5ff8" />
 
-   <meta charset="UTF-8" />
-<title>Valentine Proposal</title>
+  <link rel="preload" as="image"
+        href="https://github.com/user-attachments/assets/abe7e070-9637-4f86-bfde-50c4d6adb225" />
 
-<style>
+  <style>
     * {
         box-sizing: border-box;
         font-family: "Comic Sans MS", cursive, sans-serif;
@@ -41,9 +36,12 @@
         overflow: hidden;
     }
 
+    /* UPDATED GIF SIZE */
     .gif {
-        width: 120px;
-        margin-bottom: 10px;
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 15px;
     }
 
     h2 {
@@ -120,44 +118,42 @@
         text-align: center;
     }
 
-    .congrats img {
-        width: 300px;
-    }
-
     .congrats h1 {
         color: #dd2d4a;
     }
-</style>
+  </style>
 </head>
 
 <body>
-}
+
 <div class="card" id="mainCard">
-<img
-  class="gif"
-  src="https://github.com/user-attachments/assets/1f43b9bd-9c9c-41e1-b346-30de233e5ff8"
-  alt="Teddy GIF"
-  decoding="async"
-/>
-   <h2>Nonu, will you be my valentine?</h2>
+  <img
+    class="gif"
+    src="https://github.com/user-attachments/assets/1f43b9bd-9c9c-41e1-b346-30de233e5ff8"
+    alt="Teddy GIF"
+    decoding="async"
+  />
 
-    <div class="buttons">
-        <button id="yesBtn" class="btn">Yes</button>
-        <button id="noBtn" class="btn">No</button>
-    </div>
+  <h2>Nonu, will you be my valentine?</h2>
 
-    <div class="message" id="message"></div>
+  <div class="buttons">
+      <button id="yesBtn" class="btn">Yes</button>
+      <button id="noBtn" class="btn">No</button>
+  </div>
+
+  <div class="message" id="message"></div>
 </div>
 
 <div class="card hidden congrats" id="congratsCard">
-   <img
-     class="gif"
-  src="https://github.com/user-attachments/assets/abe7e070-9637-4f86-bfde-50c4d6adb225"
-  alt="Celebration GIF"
-  decoding="async"
-/>
-    <h1>YAY I KNEW IT 💖</h1>
-    <h2>Happy Valentine my love</h2>
+  <img
+    class="gif"
+    src="https://github.com/user-attachments/assets/abe7e070-9637-4f86-bfde-50c4d6adb225"
+    alt="Celebration GIF"
+    decoding="async"
+  />
+
+  <h1>YAY I KNEW IT 💖</h1>
+  <h2>Happy Valentine my love</h2>
 </div>
 
 <script>
@@ -169,56 +165,22 @@
     const congratsCard = document.getElementById("congratsCard");
 
     const messages = [
-        "Don’t press it 😒",
-        "I don’t like no",
-        "Wrong choice buddy",
-        "That button is broken",
-        "You know what to press",
-        "No is illegal here",
-        "Try again 😏",
-        "Seriously?",
-        "That hurts",
-        "Please press yes",
-        "I’m judging you",
-        "You’re better than this",
-        "Think again",
-        "Heart says yes",
-        "Brain says yes",
-        "Universe says yes",
-        "Why no though?",
-        "That’s suspicious",
-        "You missed the point",
-        "Almost romantic… almost",
-        "Come on now",
-        "You’re teasing me",
-        "Stop resisting",
-        "Destiny says yes",
-        "Be brave",
-        "This is getting awkward",
-        "You KNOW the answer",
-        "I believe in you",
-        "Don’t fight love",
-        "Say yes already",
-        "Not cool",
-        "Try hovering yes",
-        "That’s rude",
-        "Plot twist: yes",
-        "Nope is not allowed",
-        "Nice try",
-        "Emotional damage",
-        "You’re testing me",
-        "Love > No",
-        "Just press yes",
-        "This button lies",
-        "Wrong universe",
-        "Error 404: No not found",
-        "Stop clicking me",
-        "Okay now yes",
-        "This is fate",
-        "Final warning",
-        "Why are you like this?",
-        "I’m running out of patience",
-        "Last chance 😤"
+        "Don’t press it 😒","I don’t like no","Wrong choice buddy",
+        "That button is broken","You know what to press","No is illegal here",
+        "Try again 😏","Seriously?","That hurts","Please press yes",
+        "I’m judging you","You’re better than this","Think again",
+        "Heart says yes","Brain says yes","Universe says yes",
+        "Why no though?","That’s suspicious","You missed the point",
+        "Almost romantic… almost","Come on now","You’re teasing me",
+        "Stop resisting","Destiny says yes","Be brave",
+        "This is getting awkward","You KNOW the answer","I believe in you",
+        "Don’t fight love","Say yes already","Not cool","Try hovering yes",
+        "That’s rude","Plot twist: yes","Nope is not allowed",
+        "Nice try","Emotional damage","You’re testing me","Love > No",
+        "Just press yes","This button lies","Wrong universe",
+        "Error 404: No not found","Stop clicking me","Okay now yes",
+        "This is fate","Final warning","Why are you like this?",
+        "I’m running out of patience","Last chance 😤"
     ];
 
     let lastPosition = { x: 0, y: 0 };
@@ -238,8 +200,8 @@
         noBtn.style.left = `${x}px`;
         noBtn.style.top = `${y}px`;
 
-        const msg = messages[Math.floor(Math.random() * messages.length)];
-        messageBox.textContent = msg;
+        messageBox.textContent =
+          messages[Math.floor(Math.random() * messages.length)];
     });
 
     yesBtn.addEventListener("click", () => {
