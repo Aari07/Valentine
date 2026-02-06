@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -159,7 +160,7 @@
 <script>
     const noBtn = document.getElementById("noBtn");
     const messageBox = document.getElementById("message");
-    const card = document.getElementById("mainCard");
+    const card = document.querySelector(".card");
     const yesBtn = document.getElementById("yesBtn");
     const mainCard = document.getElementById("mainCard");
     const congratsCard = document.getElementById("congratsCard");
@@ -185,34 +186,23 @@
 
     let lastPosition = { x: 0, y: 0 };
 
-   noBtn.addEventListener("mouseenter", () => {
-    const cardRect = card.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
+    noBtn.addEventListener("mouseenter", () => {
+        const cardRect = card.getBoundingClientRect();
+        const btnRect = noBtn.getBoundingClientRect();
 
-    // Account for card padding (20px)
-    const padding = 10;
+        let x, y;
+        do {
+            x = Math.random() * (cardRect.width - btnRect.width);
+            y = Math.random() * (cardRect.height - btnRect.height - 80) + 80;
+        } while (x === lastPosition.x && y === lastPosition.y);
 
-    const maxX = cardRect.width - btnRect.width - padding;
-    const maxY = cardRect.height - btnRect.height - padding;
+        lastPosition = { x, y };
 
-    let x, y;
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
 
-    do {
-        x = Math.random() * (maxX - padding) + padding;
-        y = Math.random() * (maxY - padding - 80) + 80;
-    } while (
-        Math.abs(x - lastPosition.x) < 40 &&
-        Math.abs(y - lastPosition.y) < 40
-    );
-
-    lastPosition = { x, y };
-
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-
-    messageBox.textContent =
-        messages[Math.floor(Math.random() * messages.length)];
-});
+        messageBox.textContent =
+          messages[Math.floor(Math.random() * messages.length)];
     });
 
     yesBtn.addEventListener("click", () => {
