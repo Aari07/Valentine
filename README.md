@@ -125,11 +125,6 @@
 </head>
 
 <body>
-.gif {
-    width: 220px;      /* increased from 120px */
-    max-width: 40%;
-    height: auto;
-    margin-bottom: 15px;
 }
 <div class="card" id="mainCard">
 <img
